@@ -1,0 +1,11 @@
+h2 All projects
+
+- if projects.any?
+  #projects
+    - projects.each do |project|
+      .project
+        h2= project.name
+        p= project.description
+        = link_to project.url, project.url
+- else
+  p.placeholder There are no projects yet.
