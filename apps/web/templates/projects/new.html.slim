@@ -1,0 +1,24 @@
+h2 Add project
+
+- unless params.valid?
+  .errors
+    h3 There was a problem with your submission
+    ul
+      - params.error_messages.each do |message|
+        li= message
+
+= form_for :project, routes.projects_path do
+  - div class: 'input' do
+    - label      :name
+    - text_field :name
+
+  - div class: 'input' do
+    - label      :description
+    - text_field :description
+
+  - div class: 'input' do
+    - label      :url
+    - text_field :url
+
+  - div class: 'controls' do
+    - submit 'Create Project'
